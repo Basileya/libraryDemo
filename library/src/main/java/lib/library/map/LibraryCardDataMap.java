@@ -40,7 +40,7 @@ public class LibraryCardDataMap {
 
     public LibraryCardDataDTO updateLibraryCardDataDTO(LibraryCardData libraryCardData, Integer id){
         LibraryCardDataDTO libraryCardDataDTO = new LibraryCardDataDTO();
-        libraryCardDataDTO.setId(id);
+     //   libraryCardDataDTO.setId(id);
         libraryCardDataDTO.setDate(libraryCardData.getDate());
         libraryCardDataDTO.setDelete(libraryCardData.getDelete());
         UserDTO userDTO = new UserDTO();
@@ -70,8 +70,7 @@ public class LibraryCardDataMap {
 
     private static PublishingHouseDTO getPublishingHouse(PublishingHouse publishingHouse){
         PublishingHouseDTO dto = new PublishingHouseDTO();
-        dto.setPublishingHouse(publishingHouse.getPublishingHouse());
-        dto.setId(publishingHouse.getId());
+        dto.setName(publishingHouse.getName());
         return dto;
     }
 
@@ -82,6 +81,5 @@ public class LibraryCardDataMap {
         libraryCardData.setDelete(libraryCardDataDTO.getDelete());
         return libraryCardData;
     }
-
 
 }

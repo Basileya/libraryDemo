@@ -7,7 +7,6 @@ import lib.library.model.Book;
 import java.io.IOException;
 import java.util.Optional;
 
-
 public interface BookService {
 
     Optional<Book> saveBook(BookDTO bookDTO);

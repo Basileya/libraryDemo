@@ -1,7 +1,5 @@
 package lib.library.dto;
 
-import lib.library.model.Book;
-import lib.library.model.PublishingHouse;
 import lombok.*;
 
 @Getter
@@ -11,12 +9,14 @@ import lombok.*;
 @ToString
 public class BookDTO {
 
+    @NonNull
     private String name;
+    @NonNull
     private String authorName;
+    @NonNull
     private Integer year;
     private Integer balance;
     private Boolean delete;
     private PublishingHouseDTO publishingHouseDTO;
-
 
 }

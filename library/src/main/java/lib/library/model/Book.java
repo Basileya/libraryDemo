@@ -2,7 +2,6 @@ package lib.library.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
@@ -40,12 +39,6 @@ public class Book {
     @JoinColumn(name = "publishingHouse_id", nullable = false)
     private PublishingHouse publishingHouse;
 
-    @ManyToOne
-    @JoinColumn(name = "libraryCardData_id")
-    private LibraryCardData libraryCardData;
-
-
-
 
 
     // окремо створити видавництво ентіті видавництво (one to one)
@@ -54,6 +47,3 @@ public class Book {
     //delete(true false... з бази даних ніколи не видаляються дані, вони лише передають як true false), get.
     //
 }
-
-
-//
