@@ -1,6 +1,5 @@
 package lib.library.dto;
 
-import jakarta.persistence.Column;
 import lombok.*;
 
 @Getter
@@ -10,6 +9,6 @@ import lombok.*;
 @ToString
 public class PublishingHouseDTO {
 
-    private String publishingHouse;
+    private String name;
 
 }

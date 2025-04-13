@@ -1,6 +1,5 @@
 package lib.library.dto;
 
-
 import lib.library.model.LibraryCardData;
 import lombok.*;
 
@@ -10,7 +9,6 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 public class UserDTO {
-
 
     private String surname;
     private String name;

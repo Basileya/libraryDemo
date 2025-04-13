@@ -11,30 +11,15 @@ import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+import static java.util.Objects.nonNull;
+
 @Component
 @ToString
 public class BookMap {
 
-
-    public Book saveBook(BookDTO bookDTO){
+    public Book updateBook(BookDTO bookDTO, Integer id) {
         Book book = new Book();
-        book.setName(bookDTO.getName());
-        book.setAuthorName(bookDTO.getAuthorName());
-        book.setYear(bookDTO.getYear());
-        book.setBalance(bookDTO.getBalance());
-        book.setDelete(bookDTO.getDelete());
-        PublishingHouse publishingHouse = new PublishingHouse();
-        publishingHouse.setPublishingHouse(bookDTO.getPublishingHouseDTO().getPublishingHouse());
-        publishingHouse.setId(bookDTO.getPublishingHouseDTO().getId());
-        book.setPublishingHouse(publishingHouse);
-// 26 - 29 - створюєм об'єкт який мапимо до book
-
-        return book;
-    }
-
-    public Book updateBook(BookDTO bookDTO, Integer id){
-        Book book = new Book();
-        book.setId(id);
+        book.setId(nonNull(id) ? id : null);
         book.setName(bookDTO.getName());
         book.setAuthorName(bookDTO.getAuthorName());
         book.setYear(bookDTO.getYear());
@@ -42,32 +27,17 @@ public class BookMap {
         return book;
     }
 
-//    public BookDTO saveBook(Book book){
-//        BookDTO bookDTO = new BookDTO();
-//        bookDTO.setName(book.getName());
-//        bookDTO.setAuthorName(book.getAuthorName());
-//        bookDTO.setYear(book.getYear());
-//        bookDTO.setBalance(book.getBalance());
-//
-//        PublishingHouse publishingHouse = new PublishingHouse();
-//        publishingHouse.setId(book.getPublishingHouse().getId());
-//        publishingHouse.setPublishingHouse(book.getPublishingHouse().getPublishingHouse());
-//        bookDTO.setPublishingHouse(publishingHouse);
-//        return  bookDTO;
-//    }
-//
-//    public BookDTO updateBook(Book book, Integer id){
-//        BookDTO bookDTO = new BookDTO();
-//
-//        bookDTO.setName(book.getName());
-//        bookDTO.setAuthorName(book.getAuthorName());
-//        bookDTO.setYear(book.getYear());
-//        PublishingHouse publishingHouse = new PublishingHouse();
-//        publishingHouse.setPublishingHouse(book.getPublishingHouse().getPublishingHouse());
-//        publishingHouse.setId(book.getPublishingHouse().getId());
-//        bookDTO.setPublishingHouse(publishingHouse);
-//        return bookDTO;
-//    }
+    public BookDTO getBookDTO(Book book){
+        BookDTO bookDTO = new BookDTO();
+        bookDTO.setName(book.getName());
+        bookDTO.setAuthorName(book.getAuthorName());
+        bookDTO.setYear(book.getYear());
+        bookDTO.setBalance(book.getBalance());
 
-    //написати з Entity створити DTO
+        PublishingHouseDTO publishingHouse = new PublishingHouseDTO();
+        publishingHouse.setName(book.getPublishingHouse().getName());
+        bookDTO.setPublishingHouseDTO(publishingHouse);
+        return  bookDTO;
+    }
+
 }

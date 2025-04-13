@@ -11,7 +11,7 @@ public class PublishingHouseMap {
 
     public PublishingHouse savePublishingHouse(PublishingHouseDTO publishingHouseDTO){
         PublishingHouse publishingHouse = new PublishingHouse();
-        publishingHouse.setPublishingHouse(publishingHouseDTO.getPublishingHouse());
+        publishingHouse.setName(publishingHouseDTO.getName());
         return  publishingHouse;
     }
 }

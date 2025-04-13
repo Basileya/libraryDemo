@@ -37,25 +37,4 @@ public class User {
     @ColumnDefault("false")
     private Boolean delete;
 
-//    @OneToOne
-////    @JsonBackReference
-////    @JoinColumn(name = "library_id")
-//    private LibraryCardData libraryCardData;
-
-//    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-//    @PrimaryKeyJoinColumn
-//    @Column(name = "libraryCardData_id")
-//    @JsonManagedReference
-//    private LibraryCardData libraryCardData;
-
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "libraryCardData_id", referencedColumnName = "id")
-//    private LibraryCardData libraryCardData;
-
-
-//    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-//    @JoinColumn(name = "libraryCard_id")
-//    private LibraryCardData libraryCardData;
-//
-
 }

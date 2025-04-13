@@ -3,13 +3,11 @@ package lib.library.model;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
-import org.hibernate.boot.registry.selector.spi.StrategyCreator;
 
 import java.util.ArrayList;
 
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Gatherer;
 
 @Entity
 @Data
@@ -35,34 +33,12 @@ public class LibraryCardData {
     @ColumnDefault("false")
     private Boolean delete;
 
-//    @ManyToOne
-//    private Book book;
-
     @OneToOne
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(mappedBy = "libraryCardData", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
     private List<Book> books = new ArrayList<>();
-
-    //    @OneToOne(mappedBy = "user")
-//    private User user;
-
-
-
-
-
-
-
-//    @OneToOne
-//    @JoinColumn(name = "user_id", unique = true)
-//    private User user;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "libraryBase_id")
-//    private LibraryBase libraryBase;
-
-    //OneToMany
 
     // у карті має бути посилання на користувача
     // яку книжку взяв

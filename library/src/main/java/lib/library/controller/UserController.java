@@ -1,9 +1,7 @@
 package lib.library.controller;
 
 import lib.library.dto.UserDTO;
-import lib.library.map.LibraryCardDataMap;
 import lib.library.model.User;
-import lib.library.repository.UserRepository;
 import lib.library.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,7 +14,6 @@ import java.util.Optional;
 
 @RestController
 public class UserController {
-
 
     @Autowired
     UserService userService;

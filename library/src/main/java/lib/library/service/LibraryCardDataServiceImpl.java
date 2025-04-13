@@ -34,7 +34,7 @@ public class LibraryCardDataServiceImpl implements LibraryCardDataService {
 
     @Override
     public Optional<LibraryCardDataDTO> updateLibraryCardData(LibraryCardDataDTO libraryCardDataDTO, Integer id) throws RuntimeException {
-        LibraryCardData findLibraryCard = libraryCardDataRepository.findById(id)
+        libraryCardDataRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Library card not found"));
         LibraryCardData entity = LibraryCardDataMap.convertDTOtoEntity(libraryCardDataDTO);
         LibraryCardData saveLibraryCardData = libraryCardDataRepository.save(entity);
@@ -46,10 +46,10 @@ public class LibraryCardDataServiceImpl implements LibraryCardDataService {
         LibraryCardData libraryCardData = libraryCardDataRepository.findById(id)
                    .orElseThrow(() -> new EntityNotFoundException("Користувача з ID " + id + " не існує"));
 
-        if (libraryCardData.getDelete() == false){
+        if (!libraryCardData.getDelete()){
             libraryCardData.setDelete(true);
             libraryCardDataRepository.save(libraryCardData);
-    }else {
+        }else {
             throw new IOException("Користувача " + libraryCardData +  " немає в базі " );
         }
     }

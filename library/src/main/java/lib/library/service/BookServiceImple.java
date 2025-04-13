@@ -22,7 +22,7 @@ public class BookServiceImple implements BookService {
 
     @Override
     public Optional<Book> saveBook(BookDTO bookDTO) {
-        Book map = bookMap.saveBook(bookDTO);
+        Book map = bookMap.updateBook(bookDTO, null);
         Book book = bookRepository.save(map);
         return Optional.of(book);
     }
@@ -75,7 +75,7 @@ public class BookServiceImple implements BookService {
             throw new EntityNotFoundException("Книги " + name +  " немає в наявності") ;
         }
 
-        if (book.getDelete() == true) {
+        if (book.getDelete()) {
             book.setDelete(false);
             bookRepository.save(book);
         } else {
