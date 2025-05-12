@@ -43,7 +43,7 @@ public class PublishingHouseServiceImpl implements PublishingHouseService{
         if (publishingHouse == null){
              throw new EntityNotFoundException("Видавництва " + name +  " немає в наявності") ;
         }
-        else
+
     }
 
 
