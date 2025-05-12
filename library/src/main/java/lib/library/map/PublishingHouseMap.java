@@ -14,4 +14,11 @@ public class PublishingHouseMap {
         publishingHouse.setName(publishingHouseDTO.getName());
         return  publishingHouse;
     }
+
+    public PublishingHouse updatePublishingHouse(PublishingHouseDTO publishingHouseDTO, Integer id){
+        PublishingHouse publishingHouse = new PublishingHouse();
+        publishingHouse.setId(id);
+        publishingHouse.setName(publishingHouseDTO.getName());
+        return  publishingHouse;
+    }
 }

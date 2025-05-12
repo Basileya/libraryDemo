@@ -9,6 +9,9 @@ import lombok.*;
 @ToString
 public class PublishingHouseDTO {
 
+    @NonNull
     private String name;
+
+    private Boolean delete;
 
 }
