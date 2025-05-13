@@ -17,6 +17,7 @@ public class PublishingHouseController {
 //    @Autowired
     PublishingHouseService publishingHouseService;
 
+    //цей коментар має бути в демо гілці
 
     @GetMapping("/getPublishingHouseName/{id}")
     public Optional<PublishingHouse> getPublishingHouse(@PathVariable Integer id) {
