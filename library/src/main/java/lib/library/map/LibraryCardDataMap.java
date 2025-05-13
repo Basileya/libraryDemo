@@ -20,23 +20,23 @@ import java.util.stream.Collectors;
 public class LibraryCardDataMap {
 
 
-    public LibraryCardData mapToLibraryCardData(LibraryCardDataDTO libraryCardDataDTO){
-        LibraryCardData libraryCardData = new LibraryCardData();
-        libraryCardDataDTO.setDate(libraryCardDataDTO.getDate());
-        libraryCardDataDTO.setDelete(libraryCardDataDTO.getDelete());
-        User user = new User();
-        user.setSurname(libraryCardData.getUser().getSurname());
-        user.setName(libraryCardData.getUser().getName());
-        user.setBirthYear(libraryCardData.getUser().getBirthYear());
-        user.setDelete(libraryCardData.getUser().getDelete());
-        libraryCardData.setUser(user);
-        List<BookDTO> books = libraryCardData.getBooks()
-                .stream()
-                .map(LibraryCardDataMap::map)
-                .collect(Collectors.toList());
-        libraryCardDataDTO.setBooks(books);
-        return libraryCardData;
-    }
+//    public LibraryCardData mapToLibraryCardData(LibraryCardDataDTO libraryCardDataDTO){
+//        LibraryCardData libraryCardData = new LibraryCardData();
+//        libraryCardDataDTO.setDate(libraryCardDataDTO.getDate());
+//        libraryCardDataDTO.setDelete(libraryCardDataDTO.getDelete());
+//        User user = new User();
+//        user.setSurname(libraryCardData.getUser().getSurname());
+//        user.setName(libraryCardData.getUser().getName());
+//        user.setBirthYear(libraryCardData.getUser().getBirthYear());
+//        user.setDelete(libraryCardData.getUser().getDelete());
+//        libraryCardData.setUser(user);
+//        List<BookDTO> books = libraryCardData.getBooks()
+//                .stream()
+//                .map(LibraryCardDataMap::map)
+//                .collect(Collectors.toList());
+//        libraryCardDataDTO.setBooks(books);
+//        return libraryCardData;
+//    }
 
     public LibraryCardDataDTO updateLibraryCardDataDTO(LibraryCardData libraryCardData, Integer id){
         LibraryCardDataDTO libraryCardDataDTO = new LibraryCardDataDTO();
